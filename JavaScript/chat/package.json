@@ -1,0 +1,23 @@
+{
+  "name": "node-chat",
+  "version": "1.0.0",
+  "description": "Node js chat",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "node",
+    "js"
+  ],
+  "author": "Maxim Zudin <anonim010899@yandex.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "ws": "^7.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Maxim",
+    "age": 21,
+    "lastName": "Zudin",
+    "isAdmin": false,
+    "courses": [
+        "html",
+        "css",
+        "js"
+    ],
+    "username": "masyanya"
+}

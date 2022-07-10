@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="app-vue" class="app-vue" v-cloak>
+            <div class="app-vue__title">
+                {{ title }}
+            </div>
+            <div class="app-vue__text">
+                {{ steps[active].text }}
+            </div>
+            <ul class="app-vue__list">
+                <li class="app-vue__list-li" v-for="(item, id) in steps">
+                    <span 
+                        :class="{
+                            'active': id === active,
+                            'pre-active': id < active,
+                            'disabled': reload === true
+                        }"
+                        @click="active = id"
+                    >
+                        {{ id + 1 }}
+                    </span> 
+                    {{ item.title }}
+                </li>
+            </ul>
+            <div class="app-vue__btns">
+                <div class="app-vue__btns-onlive"
+                     v-if="reload !== true">
+                    <button :class="{
+                            'app-vue__btn': true,
+                            'disabled': active === 0
+                        }"
+                            @click="active -= 1">
+                        Назад
+                    </button>
+                    <button class="app-vue__btn"
+                            @click="active += 1"
+                            v-if="active !== steps.length - 1">
+                        Вперед
+                    </button>
+                    <button class="app-vue__btn"
+                            @click="goEnd"
+                            v-if="active === steps.length - 1">
+                        {{ btnEndValue }}
+                    </button>
+                </div>
+                <button class="app-vue__btn"
+                        @click="refresh"
+                        v-if="reload === true">
+                    Начать заного
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+body {
+    font-family: 'League Spartan', sans-serif;
+    
+    background-color: #f2f2f2;
+}
+* {
+    box-sizing: border-box;
+}
+.app {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropdown {
+    position: relative;
+    width: 400px;
+    margin: 0 0 50px 0;
+}
+.dropdown.open  .dropdown__menu {
+    display: block;
+}
+.dropdown__label {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    width: 100%;
+}
+.dropdown__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    border-radius: 5px;
+    border: 1px solid #000;
+    position: absolute;
+    width: 100%;
+    top: 28px;
+    padding: 10px 0;
+}
+.dropdown__menu li {
+    padding: 5px 10px;
+}
+.dropdown__menu li:hover {
+    background-color: rgba(0, 0, 0 , 0.2);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.block {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.wrapper {
+    margin: 200px 0 0 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    display: flex;
+    width: 500px;
+}
+input {
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #ffcc00;
+    width: 100%;
+}
+button {
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid #ffcc00;
+}
+button:hover {
+    text-decoration: underline;
+}
+.text {
+    max-width: 600px;
+    border: 2px solid red;
+    border-radius: 40px;
+    margin: 100px 0 0 0;
+    padding: 30px;
+}
+.block-1 {
+    font-size: 18px;
+    line-height: 1.3;
+}
+.block-2 {
+    display: flex;
+    align-items: center;
+}
+.block-2 p {
+    max-width: 420px;
+}
+.block-3 span{
+    color: blue;
+    text-decoration: underline;
+}
+.block-3 span:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.img {
+    width: 100px;
+    margin: 0 0 0 30px;
+}
+img {
+    width: 100%;
+}
+span {
+    padding: 30px 0 0 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2;
+    z-index: 2;
+}
+.modal {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    top: 15%;
+    left: 35%;
+    background-color: red;
+    z-index: 3;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert {
+    width: 530px;
+    height: 230px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.yes-no {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 0 0;
+}
+.yes-no button {
+    border-radius: 5px 5px 5px 5px;
+    width: 130px;
+}
+.text-alert {
+    line-height: 1.5;
+}

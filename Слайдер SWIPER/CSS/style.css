@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* ОБНУЛЯЮЩИЙ ФАЙЛ */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------------------------------*/
+/* ШРИФТЫ IMPORT */
+/*--------------------------------------------*/
+/* ШРИФТЫ */
+/*--------------------------------------------*/
+/* ПЕРЕМЕННЫЕ */
+/*--------------------------------------------*/
+/* ШАБЛОНЫ */
+/*--------------------------------------------*/
+/* МИКСИНЫ */
+/*--------------------------------------------*/
+/* SCSS */
+* {
+  background-color: #323232;
+}
+
+.title {
+  padding: 30px 0 0 0;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.image-slider {
+  margin: 150px 0 0 0;
+}
+.image-slider__image {
+  text-align: center;
+  padding: 0 0 50px 0;
+}
+.image-slider__image img {
+  max-width: 40%;
+}
+.image-slider .swiper-pagination {
+  background-color: rgba(0, 0, 0, 0);
+}
+.image-slider .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  background-color: #fff;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  color: #fff;
+  font-size: 80px;
+}
+
+/*--------------------------------------------*/
+/* KEYFRAMES */
+/*--------------------------------------------*/

@@ -1,0 +1,34 @@
+body {
+     padding: 30px;
+     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container {
+     border: 5px solid red;
+     max-width: 800px;
+     margin: 0px auto;
+     height: 800px;
+}
+
+.container div {
+     line-height: 50px;
+     font-size: 18px;
+     font-weight: 700;
+     text-align: center;
+}
+
+.block_1 {
+     background-color: #ece89d;
+}
+
+.block_2 {
+     background-color: #5e5373;
+     color: #fff;
+     position: absolute;
+     top: 0;
+     left: 0;
+}
+
+.block_3 {
+     background-color: #18b5a4;
+}

@@ -1,0 +1,15 @@
+.circle {
+    position: fixed;
+    transition-duration: 2s;
+    border-radius: 50%;
+    background-color: red;
+    transform: translateX(-50%) translateY(-50%);
+}
+.ball_hello {
+    text-align: center;
+    line-height: 160px;
+}
+.animated {
+    transition-property: background-color;
+    transition-duration: 3s;
+}

@@ -1,0 +1,31 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #ccc;
+}
+
+pre {
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+label {
+    font-weight: 700;
+    font-size: 26px;
+    margin-right: 33px;
+}
+
+select {
+    padding: 5px;
+    width: 250px;
+}
+form {
+    display: flex;
+    justify-content: space-between;
+}

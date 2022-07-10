@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Delivery Club</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" href="icons/cargo.png" type="image/x-icon">
+	<link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+	<h1>Текст</h1>
+	<a href="#bottom">BOT</a>
+	<blockquote cite="https://vk.com/maximzudin">
+		<p>ЦитатаЦитатаЦитатаЦитатаЦитатаЦитатаЦитата
+		ЦитатаЦитатаЦитатаЦитатаЦитатаЦитатаЦитатаЦитата
+		ЦитатаЦитатаЦитатаЦитатаЦитатаЦитатаЦитатаЦитата</p>
+	</blockquote>
+	<hr>
+	<time>1999-08-01</time>
+	<br>
+	<time datetime="1999-08-01">My Birthday</time>
+	<hr>
+	<b>тег b</b>
+	<br>
+	<strong>семантический тег strong</strong>
+	<br>
+	<i>тег i</i>
+	<br>
+	<em>семантический тег em</em>
+	<br>
+	<del>семантический тег del</del>
+	<br>
+	<s>тег s</s>
+	<br>
+	<ins>семантический тег ins</ins>
+	<hr>
+
+
+	<h2>Списки</h2>
+
+	<ol>
+		<li>Нумерованный список</li>
+		<li>Нумерованный список</li>
+		<li>Нумерованный список</li>
+	</ol>
+
+	<ol reversed>
+		<li>Нумерованный список с reversed</li>
+		<li>Нумерованный список с reversed</li>
+		<li>Нумерованный список с reversed</li>
+	</ol>
+
+	<ol start="10">
+		<li>Нумерованный список c start</li>
+		<li>Нумерованный список c start</li>
+		<li>Нумерованный список c start</li>
+	</ol>
+
+	<ul>
+		<li>Ненумерованный список</li>
+		<li>Ненумерованный список</li>
+		<li>Ненумерованный список</li>
+	</ul>
+
+	<ol>
+		<li>
+			Нумерованный список
+			<ul>
+				<li>
+					Ненумерованный список в нумерованном
+					<ol>
+						<li>нумерованный список в ненумерованном в нумерованном</li>
+						<li>нумерованный список в ненумерованном в нумерованном</li>
+						<li>нумерованный список в ненумерованном в нумерованном</li>
+					</ol>
+				</li>
+				<li>Ненумерованный список в нумерованном</li>
+				<li>Ненумерованный список в нумерованном</li>
+			</ul>
+		</li>
+		<li>Нумерованный список</li>
+		<li>Нумерованный список</li>
+	</ol>
+	<strong>СПИСОК ОПРЕДЕЛЕНИЙ(dl(dt(dd)))</strong>
+	<dl>
+		<dt>Это термин(dt)</dt>
+		<dd>Это определение(dd)</dd>
+	</dl>
+
+	<h2>Images</h2>
+		<p>Тег img</p>
+		<img src="images/100x100.jpg" alt="100x100image">
+		<p>Тег picture и адаптивная верстка на 1024, 768 и 360.</p>
+		<picture>
+			<source media="(min-width: 1024px)" srcset="images/900x900.jpg">
+			<source media="(min-width: 768px)" srcset="images/600x600.jpg">
+			<source media="(min-width: 360px)" srcset="images/100x100.jpg">
+			<img src="images/600x600.jpg" alt="just image">
+		</picture>
+		<p>Тег figure</p>
+		<figure>
+			<img src="images/600x600.jpg" alt="just image">
+			<figcaption>Описание картинки</figcaption>
+		</figure>
+	<h2>Таблицы</h2>
+	<table>
+		<tbody>
+			<tr>
+				<td>Content 1.1</td>
+				<td>Content 1.2</td>
+			</tr>
+			<tr>
+				<td>Content 2.1</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<table>
+		<caption>Zagolovok</caption>
+		<tbody>
+			<tr>
+				<td>Content 1.1</td>
+				<td>Content 1.2</td>
+				<td>Content 1.3</td>
+			</tr>
+			<tr>
+				<td>Content 2.1</td>
+				<td>Content 2.2</td>
+				<td>Content 2.3</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Семантический правильная таблица (thead/tbody/tfoot)</p>
+	<table>
+		<caption>Заголовок таблицы</caption>
+		<thead>
+			<tr>
+				<th>Заголовок столбца 1</th>
+				<th>Заголовок столбца 2</th>
+				<th>Заголовок столбца 3</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Content 1.1</td>
+				<td>Content 1.2</td>
+				<td>Content 1.3</td>
+			</tr>
+			<tr>
+				<td>Content 2.1</td>
+				<td>Content 2.2</td>
+				<td>Content 2.3</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>footer</td>
+				<td>footer</td>
+			</tr>
+			<tr>
+				<td colspan="2">foot</td>
+			</tr>
+		</tfoot>
+	</table>
+	<hr>
+	<h2>Links and Buttons</h2>
+	<p>Простая ссылка</p>
+	<a href="https://vk.com/maximzudin">My VK</a>
+	<p>Ссылка для скачивания файла 100x100.jpg</p>
+	<a href="images/100x100.jpg" download>100x100.jpg</a>
+	<p>Ссылка открывающаяся в новом окне</p>
+	<a href="https://open.spotify.com/" target="_blank">Spotify</a>
+	<br>
+	<a href="tel:+243-19-60">+243-19-60</a>
+	<br>
+	<a href="mailto:test@test.com">My e-mail</a>
+	<br>
+	<a href="skype:test">Skype</a>
+	<p>Ссылка якорь</p>
+	<a href="#top">Go to top</a>
+	<p id="bottom"></p>
+	<p>Кнопки</p>
+	<button type="button">Button Button</button>
+	<button type="submit">Button Submit</button>
+	<button type="reset">Button Reset</button>
+	<br>
+	<button type="button" autofocus>Button autofocus</button>
+	<button type="button" disabled>Button disabled</button>
+	<hr>
+	<h2>ПОЛЕЗНЫЕ ТЭГИ</h2>
+	<p>Тэг abbr - для расшифровки аббревиатур(семантика)</p>
+	<abbr title="HyperText Markup Language">HTML</abbr>
+	<hr>
+	<p>Data list(input)</p>
+	<input list="list">
+	<datalist id="list">
+		<option value="Front-end"></option>
+		<option value="Back-end"></option>
+		<option value="Full-stack"></option>
+	</datalist>
+	<hr>
+	<p>Диапазон(meter)</p>
+	<meter value="100" max="100" low="30" high="70"></meter>
+	<hr>
+	<p>Прогресс(progress)</p>
+	<progress value="50" max="100"></progress>
+	<p>Выделение цветом определенного слова с помощью тэга <mark>mark</mark>/</p>
+	<hr>
+	<h2>Формы (form)</h2>
+	<form action="formHandler.php" name="simple form" autocomplete="on">
+		<fieldset>
+			<legend>Заголовок формы 1</legend>
+			<label for="input_1">Login</label>
+			<input id="input_1" type="text" name="input_1" value="12">
+			<br>
+			<br>
+			<label for="input_2">Password</label>
+			<input id="input_2" type="text" name="input_2" value="12">
+			<br>
+			<br>
+			<select>
+				<option value="Front-End">Front-End</option>
+				<option value="Back-End">Back-End</option>
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend>Заголовок формы 2</legend>
+			<textarea name="textarea_1" rows="10" cols="20" maxlength="5" placeholder="установлен параметр maxlength=5"></textarea>
+			<textarea name="textarea_1" rows="10" cols="20" placeholder="your message"></textarea>
+			<textarea name="textarea_1" rows="10" cols="20" disabled placeholder="установлен параметр disabled"></textarea>
+			<textarea name="textarea_1" rows="10" cols="20" readonly>Этот текст возможно только читать, но нельзя изменить</textarea>
+			<textarea name="textarea_1" rows="10" cols="20" required placeholder="установлен параметр required"></textarea>
+			<input type="submit" value="Send">
+		</fieldset>
+	</form>
+	<hr>
+	<h2>Типы полей ввода(input)</h2>
+	<p>text</p>
+	<input type="text">
+	<p>number</p>
+	<input type="number">
+	<p>number min(5) max(100) step(5)</p>
+	<input type="number" min="5" max="100" step="5">
+	<p>password</p>
+	<input type="password">
+	<p>range</p>
+	<input type="range">
+	<p>date</p>
+	<input type="date">
+	<p>color</p>
+	<input type="color">
+	<p>submit</p>
+	<input type="submit">
+	<p>reset value(РЕСЕТ)</p>
+	<input type="reset" value="РЕСЕТ">
+	<p>email</p>
+	<input type="email">
+	<p>url</p>
+	<input type="url">
+	<p>image</p>
+	<input type="image" src="images/100x100.jpg" alt="just submit image">
+	<p>tel</p>
+	<input type="tel">
+	<p>search</p>
+	<input type="search">
+	<p>datetime-local</p>
+	<input type="datetime-local">
+	<p>month</p>
+	<input type="month">
+	<p>time</p>
+	<input type="time">
+	<p>week</p>
+	<input type="week">
+	<p>hidden</p>
+	<input type="hidden" value="СКРЫТОЕ ЗНАЧЕНИЕ">
+	<p>file</p>
+	<input type="file">
+	<p>file(multiple)</p>
+	<input type="file" multiple>
+	<p>checkbox with label</p>
+	<label>
+		<input type="checkbox" value="option_1" checked>
+		FRONT-END
+	</label>
+	<br>
+	<label>
+		<input type="checkbox" value="option_2">
+		BACK-END
+	</label>
+	<br>
+	<label>
+		<input type="checkbox" value="option_3">
+		FULL-STACK
+	</label>
+	<p>radio with label</p>
+	<label>
+		<input type="radio" name="value" value="option_1">
+		FRONT-END
+	</label>
+	<br>
+	<label>
+		<input type="radio" name="value" value="option_2" checked>
+		BACK-END
+	</label>
+	<br>
+	<label>
+		<input type="radio" name="value" value="option_3">
+		FULL-STACK
+	</label>
+	<h2>ВИДЕО и АУДИО</h2>
+	<audio controls>
+		<source src="video/example.mp3" type="audio/mpeg">
+		Your browser does not support the audio tag.
+	</audio>
+	<br>
+	<video controls width="640" height="360">
+		<source src="video/example.mp4" type="video/mp4">
+	</video>
+	<br>
+	<video controls loop width="640" height="360">
+		<source src="video/example.mp4" type="video/mp4">
+	</video>
+	<br>
+	<video controls muted width="640" height="360">
+		<source src="video/example.mp4" type="video/mp4">
+	</video>
+	<br>
+	<video controls poster="images/preview.png" width="640" height="360">
+		<source src="video/example.mp4" type="video/mp4">
+	</video>
+	<br>
+	<video preload="none" controls width="640" height="360">
+		<source src="video/example.mp4" type="video/mp4">
+	</video>
+</body>
+</html>

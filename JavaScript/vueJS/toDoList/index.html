@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="appVue" id="app">
+            <div class="appVue__title">
+                Список заметок
+            </div>
+            <div class="appVue__form">
+                <input class="appVue__input-text" 
+                       type="text" 
+                       :placeholder="placeholderInput"  
+                       v-model="inputValue"
+                       @keypress.enter="addNewNote"
+                >
+            </div>
+            <button @click="addNewNote" class="appVue__btn">
+                Добавить
+            </button>
+            <hr>
+            <ul class="appVue__list list" v-if="notes.length !== 0">
+                <li class="list__item" v-for="(myNote, indx) in notes">
+                    <span>
+                        {{ indx + 1 }}) {{ myNote }}
+                    </span>
+                    <div class="list__btns">
+                        <button class="list__btn edit" @click="editNote(indx)">редактировать</button>
+                        <button class="list__btn danger" @click="removeNote(indx)">удалить</button>
+                    </div>
+                </li>
+                <hr>
+                <li class="list__item-sum">
+                    Общее количество заметок: {{ notes.length }} | Удвоенное: {{ doubleCountCMT }}
+                </li>
+            </ul>
+            <div class="appVue__else " v-else>
+                /Заметки отсутствуют.
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+</body>
+</html>

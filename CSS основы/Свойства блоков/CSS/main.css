@@ -1,0 +1,9 @@
+.example_block {
+      border: 1px solid #000;
+      max-height: 50px;
+      max-width: 800px;
+      overflow: hidden;
+}
+.example_string {
+
+}

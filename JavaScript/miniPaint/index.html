@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+
+<body style="margin: 0;">
+    <canvas id="canvas">
+        Your browser is not supported :(
+    </canvas>
+    <div class="settings">
+        <form name="settings-form" action="">
+            <fieldset name="settings-fieldset">
+                <label for="settings-tools">Инструмент:</label>
+                <select name="settings-tools" id="settings-tools">
+                    <option value="brush">Кисть</option>
+                    <option value="pensil">Карандаш</option>
+                    <option value="pipette">Пипетка</option>
+                    <option value="custom">Кастом</option>
+                    <option value="figure">Фигуры</option>
+                    <option value="pong">Ping-pong</option>
+                </select>
+                <label class="settings-figure-all disabled" for="settings-figure">Фигуры:</label>
+                <select class="settings-figure-all disabled" name="settings-figure" id="settings-figure">
+                    <option value="rectangle">Прямоугольник</option>
+                    <option value="circle">Круг</option>
+                </select>
+                <label for="settings-color">Цвет:</label>
+                <input id="settings-color" type="color">
+                <label for="settings-size">Размер:</label>
+                <input id="settings-size" type="number" value="10">
+                <input id="settings-refresh" type="button" value="Очистить">
+                <input id="settings-eraser" type="button" value="Ластик">
+            </fieldset>
+        </form>
+    </div>
+    <span class="info">
+
+    </span>
+    <script src="js.js"></script>
+</body>
+
+</html>

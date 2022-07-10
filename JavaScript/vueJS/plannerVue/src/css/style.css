@@ -1,0 +1,186 @@
+@charset "UTF-8";
+/* ОБНУЛЯЮЩИЙ ФАЙЛ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------------------------------*/
+/* ШРИФТЫ IMPORT */
+/*--------------------------------------------*/
+/* ШРИФТЫ */
+/*--------------------------------------------*/
+/* ПЕРЕМЕННЫЕ */
+/*--------------------------------------------*/
+/* ШАБЛОНЫ */
+/*--------------------------------------------*/
+/* МИКСИНЫ */
+/*--------------------------------------------*/
+/* SCSS */
+[v-cloak] {
+  display: none;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #293552;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.app-vue {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 100px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.app-vue__title {
+  font-size: 35px;
+  font-weight: 700;
+  color: #193552;
+  margin: 20px 0 40px 0;
+}
+.app-vue__text {
+  margin: 0 0 30px 0;
+  font-size: 18px;
+  height: 70px;
+}
+.app-vue__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.app-vue__list-li {
+  color: #463382;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.app-vue__list-li span {
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #ccc;
+  color: #fff;
+  margin: 0 5px 0 0;
+  transition: all 0.1s ease;
+}
+.app-vue__list-li span:hover {
+  transform: scale(1.05);
+}
+.app-vue__btns {
+  margin: 30px 0 0 0;
+}
+.app-vue__btns :not(:last-child) {
+  margin: 0 10px 0 0;
+}
+.app-vue__btn {
+  padding: 10px 20px;
+  background-color: #463382;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 30px;
+  transition: all 0.1s ease;
+}
+.app-vue__btn:hover {
+  transform: translate(0, -1px);
+}
+.app-vue .disabled {
+  background: #999;
+  color: #555;
+  pointer-events: none;
+}
+.app-vue .active {
+  background-color: #463382;
+}
+.app-vue .pre-active {
+  background-color: #917ecc;
+  color: #000;
+}
+
+/*--------------------------------------------*/
+/* KEYFRAMES */
+/*--------------------------------------------*/

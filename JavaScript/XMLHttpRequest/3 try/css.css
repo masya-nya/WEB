@@ -1,0 +1,26 @@
+* {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body {
+    background-color: #eda495;
+}
+.search {
+}
+.search__body {
+    max-width: 1000px;
+    margin: 0 auto;   
+}
+.search__text {
+    width: 90%;
+    background-color: #f5cac1;
+    border: 0px solid #fff;
+    padding: 10px;
+}
+.search__button {
+    background-color: #f5cac1;
+    padding: 8px;
+}
+.search__hints {
+    width: 100%;
+    background-color: #f5cac1;
+}

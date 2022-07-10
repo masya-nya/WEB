@@ -1,0 +1,98 @@
+.arial{
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 30px;
+      color: #0f23c3
+ }
+.notarial{
+      font-size: 30px;
+}
+.italic {
+      font-style: italic;
+}
+.fontweight {
+      font-weight: 700;
+}
+.textright {
+      text-align: center;
+}
+.decoration {
+      text-decoration: underline;
+}
+.shadow {
+      text-shadow: 1px 1px 5px #000;
+}
+.transform {
+      text-transform: capitalize;
+}
+.ident {
+      text-indent: 50px;
+}
+.lspace {
+      letter-spacing: 5px;
+}
+.wspace {
+      word-spacing: 10px;
+}
+.whitespace {
+      white-space: nowrap;
+}
+.lheight {
+      line-height: 5px;
+}
+
+.home_work {
+      color: #333333;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      line-height: 14px;
+}
+
+h1 {
+      font-size: 30px;
+      color: #445161;
+      line-height: 30px;
+}
+.text_hw {
+      line-height: 25px;
+}
+h2 {
+      color: #445161;
+      line-height: 30px;
+      font-size: 25px;
+}
+.bold_hw {
+      font-weight: bold;
+}
+.red_hw {
+      color: #f00f00;
+}
+h3 {
+      line-height: 30px;
+      font-size: 20px;
+      color: #445161;
+}
+.align_hw {
+      text-align: right;
+}
+.transform_hw {
+      text-transform: uppercase;
+}
+.italic_hw {
+      font-style: italic;
+}
+.decoration_hw {
+      text-decoration: underline;
+}
+.align_2_hw {
+      text-align: center;
+}
+
+h4 {
+      font-size: 24px;
+      line-height: 24px;
+}
+.decoration_2_hw {
+      text-decoration: line-through;
+}
+.shadow_hw {
+      text-shadow: 1px 1px 1px #000;
+}

@@ -1,0 +1,397 @@
+/*
+html {
+    width: 2000px;
+    height: 2000px;
+}
+*/
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+body {
+    background: linear-gradient(powderblue, pink);
+    font-family: 'Roboto', sans-serif;
+}
+.hide {
+    display: none!important;
+}
+.flex {
+    display: flex!important;
+}
+.game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game__body {
+    margin: 120px 0 0 0;
+    border-radius: 15px;
+    background-color: #fff;
+    min-width: 700px;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game__body > :not(:last-child) {
+    margin: 10px 0;
+}
+.game__title {
+    font-weight: 700;
+    font-size: 20px;
+}
+.game__field {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ccc;
+    z-index: 2;
+}
+.game__field button {
+    position: absolute;
+    background-color: #f8d46a;
+    padding: 15px 45px;
+    border-radius: 40px;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 3;
+    transition: transform .1s ease-in-out,box-shadow .1s ease-in-out;
+}
+.game__field button:hover {
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.2);
+    transform: translateY(-1px);
+}
+.game__field-modal button:active {
+    transform: none;
+    box-shadow: none;
+}
+.game__field-end {
+    background-color: #999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game__field-end > p{
+    color: #181818;
+    font-size: 24px;
+    font-weight: 600;
+}
+.game__setTime > p{
+    color: #ccc;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 7px 0;
+}
+.game__setTime > input{
+    max-width: 200px;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+.block {
+    display: none;
+}
+.football_field {
+    position: relative;
+    width: 400px;
+    height: 225px;
+    background: url('jsBase/images/football.jpg') 0 0/100% auto no-repeat;
+    border: 10px solid #000;
+}
+.football_ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    touch-action: none;
+}
+.metka {
+    height: 40%;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+}
+.metka_2 {
+    height: 90px;
+    width: 90px;
+    background-color: #fff;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+}
+.slider {
+    border: 5px;
+    margin: 15px;
+    border-radius: 5px;
+    width: 200px;
+    height: 15px;
+    background: #ccc;
+}
+.thumb {
+    border-radius: 3px;
+    cursor: pointer;
+    width: 10px;
+    height: 25px;
+    background-color: #5e344e;
+    position: relative;
+    left: 5px;
+    top: -5px;
+    touch-action: none;
+}
+.football-hero__field {
+    background: url('jsBase/images/field.jpg') 0 0 / 100% auto no-repeat;
+    width: 1000px;
+    height: 563px;
+    float: left;
+    position: relative;
+    border: 1px solid #5e344e;
+}
+.football-hero__hero {
+}
+.hero {
+    cursor: pointer;
+    position: relative;
+}
+.ball {
+    width: 5%;
+}
+.gate {
+    width: 20px;
+    height: 200px;
+    
+    
+}
+.gate_1 {
+    background-color: #fff;
+    position: absolute;
+    top: 32%;
+    left: 0px;
+}
+.gate_2 {
+    background-color: #fff;
+    position: absolute;
+    top: 32%;
+    left: 98%;
+}
+.kredit {
+    display: flex;
+}
+.graffiki {
+    display: flex;
+}
+.graffik-1 {
+    padding: 10px;
+}
+.graffik-1__text {
+    font-weight: 700;
+    text-align: center;
+}
+.graffik-1__number {
+    text-align: center;
+}
+.graffik-1__img {
+    width: 45px;
+    height: 100px;
+    background-color: red;
+}
+.graffik-2 {
+    padding: 10px;
+}
+.graffik-2__text {
+    font-weight: 700;
+    text-align: center;
+}
+.graffik-2__number {
+    text-align: center;
+}
+.graffik-2__img {
+    width: 45px;
+    height: 100px;
+    background-color: blue;
+}
+
+/*
+.layer_1 {
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+}
+.layer_2 {
+    height: 200px;
+    width: 200px;
+    background-color: yellow;
+}
+.layer_3 {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+}
+*/
+/*
+.highlight {
+    background-color: red;
+}
+li {
+    cursor: pointer;
+}
+*/
+/*
+th, td {
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 40px;
+}
+*/
+/*
+p {
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+    border: 5px solid #000;
+    padding: 20px;
+}
+.link {
+    overflow: auto;
+    width: 100px;
+}
+*/
+.modal {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    max-width: 100%;
+    height: 600px;
+    max-height: 100%;
+    z-index: 1010;
+    background-color: #fff;
+}
+.modal__guts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.modal__guts img {
+    max-width: 100%;
+}
+.modal-overlay {
+    z-index: 1000;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.7);
+}
+.modal-closed {
+    display: none;
+}
+.modal__button {
+    z-index: 1111;
+}
