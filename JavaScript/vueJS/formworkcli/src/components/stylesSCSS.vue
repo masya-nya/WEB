@@ -1,8 +1,10 @@
 <style lang="scss">
 @import url('./zero.scss');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
     background-color: #324563;
+    font-family: 'Roboto', sans-serif;
 }
 
 hr {
