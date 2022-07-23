@@ -2,6 +2,8 @@
 @import url('./zero.scss');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+$fontSizeTitle: 28px;
+
 body {
     background-color: #324563;
     font-family: 'Roboto', sans-serif;
@@ -37,6 +39,8 @@ body {
     &__title {
         font-size: 28px;
         font-weight: 700;
+        word-break: break-all;
+        line-height: 1.2;
     }
     &__time {
         font-size: 14px;
@@ -45,6 +49,7 @@ body {
     &__from {
         font-size: 16px;
         & span {
+            word-break: break-all;
             color: #c7349d;
             text-decoration: underline;
             font-size: 18px;
@@ -145,7 +150,7 @@ body {
 }
 .modal-editor {
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -289,5 +294,47 @@ hr {
     width: 100%;
 }
     
+
+@media (max-width: 600px) {
+    .constructor__title {
+        font-size: 22px;
+    }
+    .input23423 label {
+        font-size: 14px;
+    }
+    .news-item__title {
+        font-size: 18px;
+    }
+    .news-item__time {
+        font-size: 11px;
+    }
+    .news-item__from {
+        font-size: 11px;
+        & span {
+            font-size: 12px;
+        }
+    }
+    .news-item__bottom__content {
+        font-size: 12px;
+    }
+    .fa {
+        font-size: 18px;
+    }
+}
+@media (max-width: 460px) {
+    .news-item {
+        &__top {
+            flex-direction: column;
+        }
+        &__avatar {
+            margin: 0 0 20px 0;
+        }
+        &__top-right {
+            margin: 0;
+            align-items: center;
+        }
+    }
+}
+
 
 </style>

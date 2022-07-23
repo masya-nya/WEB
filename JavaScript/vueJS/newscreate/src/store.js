@@ -41,7 +41,6 @@ export default createStore({
             state.editorStatus = bool;
         },
         editorValueChange(state, {title, description, name}) {
-            console.log(title, description)
             state.editTitleValue = title;
             state.editDescriptionValue = description;
             state.editNameValue = name;

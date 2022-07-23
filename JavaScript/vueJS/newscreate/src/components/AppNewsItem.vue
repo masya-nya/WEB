@@ -56,7 +56,7 @@ export default {
         description: String,
         time: String,
         name: String,
-        likeValue: String,
+        likeValue: Number,
         likeStatus: Boolean 
     },
     methods: {
