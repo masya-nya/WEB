@@ -32,7 +32,8 @@ export default {
         store.state.nameCreate !== '' && 
         store.state.descriptionCreate !== '' && 
         store.state.deadlineCreate !== '' && 
-        store.state.nameCreate.length < 45
+        store.state.nameCreate.length < 45 &&
+        store.state.deadlineCreate.length <= 10
         )
 
         function submit() {

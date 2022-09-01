@@ -24,14 +24,14 @@
                     :disabled="task.status.value === 'canceled'"
                     @click="status('inWork')"
                 >Взять в работу</button>
-                <button class="btn primary"
-                    :disabled="task.status.value === 'canceled'"
-                    @click="status('done')"
-                >Завершить</button>
                 <button class="btn normal"
                     :disabled="task.status.value === 'canceled'"
                     @click="status('active')"
                 >Сделать активной</button>
+                <button class="btn primary"
+                    :disabled="task.status.value === 'canceled'"
+                    @click="status('done')"
+                >Завершить</button>
             </div>
             <div class="task__btns-right">
                 <button class="btn"

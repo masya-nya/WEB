@@ -5,7 +5,7 @@
 $fontSizeTitle: 28px;
 
 body {
-    background-color: #324563;
+    background-color: #1a4780;
     font-family: 'Roboto', sans-serif;
     color: #324563;
     padding: 30px;
@@ -257,28 +257,69 @@ body {
     }
 }
 .btn {
-    padding: 7px 20px;
-    margin: 5px 0;
-    border-radius: 13px;
-    font-size: 16px;
-    background-color: #213462;
-    color: #fff;
-    transition: all 0.1s ease;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
     text-transform: uppercase;
+    padding: 13px 15px;
+    border-radius: 10px;
+    background: rgb(64, 199, 129);
+    box-shadow: 0 -3px rgb(53, 167, 110) inset;
+    transition: 0.2s;
+    &:hover {
+        background: rgb(53, 167, 110);
+    }
+    &:active {
+        background: rgb(33, 147, 90);
+        box-shadow: 0 3px rgb(33, 147, 90) inset;
+    }
     &.primary {
-        background-color: #213462;
+        background-color: rgb(33, 52, 98);
+        box-shadow: 0 -3px rgb(8, 37, 103) inset;
+        &:hover {
+            background: rgb(8, 37, 103);
+        }
+        &:active {
+            background: rgb(33, 52, 98);
+            box-shadow: 0 3px rgb(33, 52, 98) inset;
+        }
     }
     &.danger {
-        background-color: #913212;
+        background-color: rgb(145, 50, 18);
+        box-shadow: 0 -3px rgb(115, 35, 23) inset;
+        &:hover {
+            background: rgb(115, 35, 23);
+        }
+        &:active {
+            background: rgb(145, 50, 18);
+            box-shadow: 0 3px rgb(145, 50, 18) inset;
+        }
     }
     &.warning {
-        background-color: #915212;
+        background-color: rgb(145, 82, 18);
+        box-shadow: 0 -3px rgb(99, 56, 12) inset;
+        &:hover {
+            background: rgb(99, 56, 12);
+        }
+        &:active {
+            background: rgb(145, 82, 18);
+            box-shadow: 0 3px rgb(145, 82, 18) inset;
+        }
+    }
+    &.normal {
+        background-color: #77dd77;
+        background-color: rgb(119, 221, 119);
+        box-shadow: 0 -3px rgb(78, 212, 78) inset;
+        &:hover {
+            background: rgb(78, 212, 78);
+        }
+        &:active {
+            background: rgb(119, 221, 119);
+            box-shadow: 0 3px rgb(119, 221, 119) inset;
+        }
     }
     &.like {
         background-color: #cc1b00;
-    }
-    &:hover {
-        transform: scale(1.03);
     }
 }
 button {

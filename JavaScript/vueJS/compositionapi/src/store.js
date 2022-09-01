@@ -77,7 +77,7 @@ export const store = createStore({
         },
         async changeStatus(ctx, {status, id}) {
             ctx.state.allTasks.find(el => el.id === id).status.value = status;
-            await axios.put(ctx.state.url + `tasks/${id}/status.json`, {
+            await axios.patch(ctx.state.url + `tasks/${id}/status.json`, {
                 value: status
             })
         },
