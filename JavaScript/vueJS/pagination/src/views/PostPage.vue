@@ -1,59 +1,76 @@
 <template>
-    <div class="card user">
-        <div class="body">
-            <div class="user__title">
-                name: <span>{{ user.name }}</span>
-            </div>
-            <div class="user__username">
-                username: <span>{{ user.username }}</span>
-            </div>
-            <div class="user__email">
-                email: <span>{{ user.email }}</span>
-            </div>
-            <div class="user__from">
-                from: <span>{{ user.address.city }}</span>
-            </div>
-        </div>
-        <button class="btn" @click="$router.push('/')">Назад</button>
-    </div>
     <app-post-item
-        v-for="post in posts" :key="post.id"
         :title="post.title"
         :text="post.body"
         :id="post.id"
         :openDisabled="true"
+        :backDisabled="false"
     ></app-post-item>
+    <button class="btn" @click="loadComments(post.id)">
+            Загрузить комментарии
+        </button>
+    <div class="comments" v-if="comments.length !== 0">
+        <div class="comments__item card" v-for="comment in comments" :key="comment.id">
+            <div class="comments__title">{{ comment.name }}</div>
+            <div class="comments__email">from: {{ comment.email }}</div>
+            <div class="comments__text">{{ comment.body }}</div>
+        </div>
+    </div>
+    <div class="else" v-if="commentStatus">
+        Комментарии к данному посту отсутствуют
+    </div>
 </template>
 
 <script>
 import AppPostItem from '../components/AppPostItem.vue';
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 export default {
     setup() {
         const route = useRoute();
         const store = useStore();
-        const posts = computed(() => store.state.fetchData.filter(e => e.userId === +route.params.userId) || { title: '',body: ''})
+        const comments = ref([])
+        const commentStatus = ref(false)
+        
+        const post = computed(() => store.state.fetchData.find(e => e.id === +route.params.userId) || { title: '',body: ''})
         const user = computed(() => store.state.users.find(e => e.id === +route.params.userId))
-        console.log(posts)
+        
+        const loadComments = async (id) => {
+            comments.value = await store.dispatch('getComments', id)
+            if(comments.value.length === 0){
+                commentStatus.value = true;
+            }
+            console.log(comments.value)
+        }
         return {
-            posts,
-            user
+            post,
+            user,
+            loadComments,
+            comments,
+            commentStatus
         }
     },
     components: {AppPostItem}
 }
 </script>
 
-<style>
-.user {
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+<style scoped>
+.comments__item >:not(:last-child) {
+    margin: 0 0 15px 0;
 }
-span {
-    font-size: 20px;
+.comments__title {
+    font-size: 26px;
+    padding: 3px;
+}
+.comments__email {
+    color: #ccc;
+}
+.comments__text {
+    word-break: break-all;
+}
+.else {
+    font-size: 16;
+    padding: 10px;
 }
 </style>

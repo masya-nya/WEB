@@ -8,7 +8,6 @@ export const store = createStore({
             allPosts: [],
             posts: [],
             fetchData: [],
-            users: [],
             page: 1,
             pageCount: 10,
             pageSize: 10,
@@ -16,7 +15,6 @@ export const store = createStore({
             searchValue: '',
             titleCreate: '',
             descriptionCreate: '',
-            userCreate: ''
         }
     },
     getters: {
@@ -37,10 +35,7 @@ export const store = createStore({
         },
         modalCreateStatus(state) {
             return state.modalCreateStatus;
-        },
-        users(state) {
-            return state.users;
-        } 
+        }
     },
     mutations: {
         modalCreateStatusChange(state, bool) {
@@ -49,9 +44,6 @@ export const store = createStore({
         takePosts(state, fetchPosts) {
             state.allPosts = fetchPosts;
             state.fetchData = fetchPosts;
-        },
-        takeUsers(state, fetchUsers) {
-            state.users = fetchUsers;
         },
         setupPagination(state) {
             state.allPosts = _.chunk(state.allPosts, state.pageSize);
@@ -74,9 +66,10 @@ export const store = createStore({
             commit('takePosts', data)
             commit('setupPagination')
         },
-        async getUsers({ commit }) {
-            const { data } = await axios.get('https://jsonplaceholder.typicode.com/users') 
-            commit('takeUsers', data)
+        async getComments(_, id) {
+            const { data } = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`) 
+            console.log(data)
+            return data;
         },
         async deletePost({ state, commit }, id) {
             state.fetchData.splice(state.fetchData.indexOf(state.fetchData.find(item => item.id === id)), 1)
@@ -86,25 +79,25 @@ export const store = createStore({
             console.log(response)
         },
         async createPost({ state: s, commit }) {
-            s.fetchData.unshift({
-                body: s.descriptionCreate,
-                title: s.titleCreate,
-                id: s.fetchData.length + 1,
-                userId: s.users.find(e => e.username === s.userCreate).id
-            })
-            s.allPosts = s.fetchData;
-            commit('setupPagination')
-            commit('modalCreateStatusChange', false)
-            const response = await axios.post(`https://jsonplaceholder.typicode.com/posts`, 
-            {
-                body: s.descriptionCreate,
-                title: s.titleCreate,
-                id: s.fetchData.length + 1,
-                userId: s.users.find(e => e.username === s.userCreate).id
-            })
-            console.log(response)
-            s.descriptionCreate = '';
-            s.titleCreate = '';
+            if(s.titleCreate !== '' && s.descriptionCreate !== '') {
+                s.fetchData.unshift({
+                    body: s.descriptionCreate,
+                    title: s.titleCreate,
+                    id: s.fetchData.length + 1
+                })
+                s.allPosts = s.fetchData;
+                commit('setupPagination')
+                commit('modalCreateStatusChange', false)
+                const response = await axios.post(`https://jsonplaceholder.typicode.com/posts`, 
+                {
+                    body: s.descriptionCreate,
+                    title: s.titleCreate,
+                    id: s.fetchData.length + 1
+                })
+                console.log(response)
+                s.descriptionCreate = '';
+                s.titleCreate = '';
+            }
         }
     }
 }) 

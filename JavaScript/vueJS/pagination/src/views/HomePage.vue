@@ -10,6 +10,7 @@
         :id="post.id"
         :userId="post.userId"
         :openDisabled="false"
+        :backDisabled="true"
     ></app-post-item>
     <paginate
         v-model="page"

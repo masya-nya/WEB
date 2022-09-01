@@ -12,7 +12,6 @@ export default {
         const store = useStore();
         onMounted(() => {
             store.dispatch('getPosts')
-            store.dispatch('getUsers')
         })
     }
 }

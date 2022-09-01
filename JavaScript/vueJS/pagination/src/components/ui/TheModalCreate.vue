@@ -3,13 +3,6 @@
         <div class="modal__body">
             <div class="modal__title">Создать пост</div>
             <div class="form-control">
-                <label for="user">Комментарий для</label>
-                <select id="user" v-model="$store.state.userCreate">
-                    <option v-for="user in users" :key="user.id"  :value="user.username"
-                    >{{ user.name }}</option>
-                </select>
-            </div>
-            <div class="form-control">
                 <label for="title">Заголовок</label>
                 <input id="title" type="text" placeholder="Введите заголовок" v-model="$store.state.titleCreate">
             </div>
@@ -26,14 +19,9 @@
 </template>
 
 <script>
-import { useStore } from 'vuex';
-import { computed } from 'vue'
 export default {
     setup() {
-        const store = useStore();
-
         return {
-            users: computed(() => store.getters.users)
         }
     }
 }
