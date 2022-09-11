@@ -11,6 +11,7 @@
                 :status="message.status"
                 :id="message.id"
             ></message-body>
+            <span class="sidebar__clear" @click="clearSidebar">Удалить всё</span>
         </ul>
         <h2 class="H2_ELSE" v-else>
             Список ваших сообщений пуст
@@ -27,18 +28,26 @@ export default {
         const store = useStore();
 
         const messages = computed(() => store.getters['messages/messages']);
+
         const close = () => {
             store.commit('messages/statusChange', false)
         };
 
-        watch(store.getters['messages/messages'], () => {
-            store.commit('messages/statusChange', true)
-        })
+        const clearSidebar = () => {
+            store.commit('messages/clearSidebar')
+            store.commit('messages/statusChange', false)
+        }
 
+        watch(store.getters['messages/messages'], (newV) => {
+            if(newV.length !== 0) {
+                store.commit('messages/statusChange', true)
+            }
+        })
 
         return {
             messages,
-            close
+            close,
+            clearSidebar
         }
     },
     components: {MessageBody}
@@ -47,6 +56,10 @@ export default {
 <style scoped>
 .CLOSE_SIDEBAR {
     cursor: pointer;
+    transition: all 0.1s ease;
+}
+.CLOSE_SIDEBAR:hover {
+    transform: scale(1.1);
 }
 .H2_ELSE {
     font-size: 16px;

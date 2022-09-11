@@ -14,6 +14,8 @@ $color-btn-base: rgb(252, 226, 36);
 $color-btn-base-shadow: rgb(252, 197, 33);
 $color-btn-danger: rgb(225, 18, 22);
 $color-btn-danger-shadow: rgb(204, 18, 22);
+$color-btn-primary: rgb(228, 235, 243);
+$color-btn-primary-shadow: rgb(214, 229, 242);
 $color-bg-base: rgb(246, 247, 248);
 $color-bg-header: rgb(255, 255, 255);
 $color-bg-auth: rgb(255, 255, 255);
@@ -22,6 +24,7 @@ $color-bg-sidebar: rgb(255, 255, 255);
 $color-input-base: rgb(228, 235, 243);
 $color-input-hover: rgb(204, 219, 232);
 $color-text-base: rgb(51, 51, 51);
+$color-text-blue: rgb(92, 139, 239);
 $fontSize-text-base: 14px;
 $fontSize-title-header: 30px;
 // Миксины -------------------------------------------------------------
@@ -31,7 +34,7 @@ $fontSize-title-header: 30px;
     cursor: pointer;
 }
 @mixin title-h1 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
 }
 @mixin header-links {
@@ -52,6 +55,13 @@ $fontSize-title-header: 30px;
     align-items: center;
     justify-content: center;
 }
+@mixin not-selected {
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 // Функции -------------------------------------------------------------
 // SASS ----------------------------------------------------------------
 
@@ -60,12 +70,25 @@ body {
     color: $color-text-base;
     font-size: $fontSize-text-base;
     font-family: 'Ubuntu', sans-serif;
+    padding: 80px 0 0 0;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-green;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0)
+    }
 }
 
 .container {
     max-width: 1050px;
     margin: 0 auto;
     padding: 20px;
+    display: grid;
     &.with-auth {
         height: 100%;
         display: flex;
@@ -128,6 +151,25 @@ body {
     &__title {
         @include title-h1;
         margin: 0 0 20px 0;
+    }
+}
+.table {
+    width: 100%;
+    & th {
+        font-size: 18px;
+        padding: 5px;
+    }
+    & tr {
+        display: grid;
+        grid-template-columns: 1fr 8fr 5fr 5fr 4fr 3fr;
+        justify-items: center;
+        align-items: center;
+        font-size: 16px;
+        padding: 10px;
+        transition: all 0.2s ease;
+        &:not([class="table-title"]):hover {
+            background-color: $color-input-base;
+        }
     }
 }
 .auth {
@@ -197,6 +239,67 @@ body {
         @include title-h1;
     }
 }
+.request {
+    display: grid;
+    justify-items: start;
+    align-items: center;
+    font-size: 18px;
+    & >:not(:last-child){
+        margin: 0 0 25px 0;
+    }
+    &__btns {
+        display: flex;
+        & >:not(:last-child) {
+            margin: 0 20px 0 0;
+        }
+    }
+}
+.pagination {
+    display: flex;
+    margin: 10px;
+    & >:not(:last-child) {
+        margin: 0 5px 0 0;
+    }
+    & .page-link {
+        padding: 5px 7px;
+    }
+    & .page-item {
+        cursor: pointer;
+        font-size: 20px;
+        border: 1px solid rgba(0, 0, 0, 0);
+        background-color: $color-white;
+        padding: 5px 0;
+        border-radius: 3px;
+        @include box-shadow-base;
+        @include not-selected;
+        &.active {
+            background-color: $color-btn-base;
+        }
+        &:hover {
+            border-color: $color-btn-base;
+        }
+        &:active {
+            background-color: $color-btn-base;
+        }
+    }
+}
+.question {
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 3px;
+    margin: 0 0 10px 0;
+    cursor: pointer;
+    line-height: 1.4;
+    & >:not(:last-child) {
+        margin: 0 0 10px 0;
+    }
+    &__title {
+        font-weight: 700;
+    }
+    &:hover {
+        background-color: $color-input-base;
+    }
+}
 .form-control {
     display: flex;
     flex-direction: column;
@@ -213,11 +316,7 @@ body {
             right: 15px;
             font-size: 20px;
             cursor: pointer;
-            -moz-user-select: -moz-none;
-            -o-user-select: none;
-            -khtml-user-select: none;
-            -webkit-user-select: none;
-            user-select: none;
+            @include not-selected;
         }
     }
     & label {
@@ -270,7 +369,6 @@ small {
 }
 .card {
     @include box-shadow-base;
-    margin: 80px 0 0 0;
     background-color: #fff;
     border-radius: 3px;
     padding: 20px;
@@ -279,8 +377,10 @@ small {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 0 0 20px 0;
     }
 }
+
 .error {
     background-color: $color-bg-error;
 }
@@ -302,18 +402,50 @@ small {
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin: 0 0 20px 0;
+        margin: 0 0 10px 0;
         & h1 {
             @include title-h1;
         }
         & span {
             font-size: 26px;
         }
-        
+    }
+    &__clear {
+        cursor: pointer;
+        background-color: $color-white;
+        color: rgba(225, 18, 22, 1);
+        border: 1px solid rgba(225, 18, 22, 0.7);
+        padding: 3px;
+        border-radius: 0 0 20px 20px;
+        transition: all 0.1s ease;
+        text-align: center;
+        @include not-selected;
+        &:hover {
+            background-color: rgba(225, 18, 22, 0.9);
+            color: $color-white;
+        }
+        &:active {
+            background-color: rgba(225, 18, 22, 0.7);
+            color: $color-white;
+        }
     }
     &__body {
-        padding: 0 0 0 5px;
+        padding: 0 5px 5px 5px;
         width: 100%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0);
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $color-green;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0)
+        }
         & >:not(:last-child) {
             margin: 0 0 10px 0;
         }
@@ -356,10 +488,28 @@ small {
         transform: scale(1.05);
     }
 }
+.filter {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr;
+    align-items: center;
+    grid-gap: 40px;
+    padding: 30px;
+    & .form-control {
+        & input {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+        & select {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+    }
+}
 .btn {
     font-size: 16px;
     color: $color-grey-dark;
-    padding: 13px 15px;
+    padding: 12px 14px;
+    border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 5px;
     transition: 0.2s;
     background: $color-btn-base;
@@ -371,7 +521,22 @@ small {
         background: $color-btn-base;
         box-shadow: 0 3px $color-btn-base inset;
     }
+    &.primary {
+        color: $color-text-blue;
+        background-color: $color-input-hover;
+        box-shadow: 0 -3px $color-input-hover inset;
+        &:hover {
+            background: $color-input-hover;
+            color: $color-grey-dark;
+            border-color: $color-grey-dark;
+        }
+        &:active {
+            background: $color-input-hover;
+            box-shadow: 0 3px $color-input-hover inset;
+        }
+    }
     &.danger {
+        color: $color-white;
         background-color: $color-btn-danger;
         box-shadow: 0 -3px $color-btn-danger-shadow inset;
         &:hover {
@@ -392,39 +557,41 @@ button:disabled {
     pointer-events: none !important;
 }
 .status {
-    border: 2px solid #000;
+    display: inline-block;
+    border: 1px solid #000;
     color: #000;
-    font-size: 14px;
+    font-size: 13px;
     padding: 3px 10px;
     border-radius: 15px;
     font-weight: 700;
     text-transform: uppercase;
-    
+    @include not-selected;
     &.active {
         border-color: rgb(33, 209, 159);
         color: rgb(33, 209, 159);
-        box-shadow: 0px -3px 10px rgba(33, 209, 159, 0.3),
-                    0px 3px 10px rgba(33, 209, 159, 0.3);
+        box-shadow: 0px 0px 3px rgba(33, 209, 159, 0.2),
+                    0px 0px 3px rgba(33, 209, 159, 0.2);
     }
     &.canceled {
         border-color: #cc1b00;
         color: #cc1b00;
-        box-shadow: 0px -3px 10px rgba(204, 27, 0, 0.3),
-                    0px 3px 10px rgba(204, 27, 0, 0.3);
+        box-shadow: 0px 0px 3px rgb(204, 27, 0, 0.2), 
+                    0px 0px 3px rgb(204, 27, 0, 0.2)
     }
-    &.inWork {
+    &.pending {
         border-color: rgb(163, 75, 193);
         color: rgb(163, 75, 193);
-        box-shadow: 0px -3px 10px rgba(163, 75, 193, 0.3),
-                    0px 3px 10px rgba(163, 75, 193, 0.3);
+        box-shadow: 0px 0px 3px rgba(163, 75, 193, 0.2),
+                    0px 0px 3px rgba(163, 75, 193, 0.2);
     }
     &.done {
         border-color: rgb(83, 75, 98);
         color: rgb(83, 75, 98);
-        box-shadow: 0px -3px 10px rgba(83, 75, 98, 0.3),
-                    0px 3px 10px rgba(83, 75, 98, 0.3);
+        box-shadow: 0px 0px 3px rgba(83, 75, 98, 0.2),
+                    0px 0px 3px rgba(83, 75, 98, 0.2);
     }
 }
+
 // Анимация ------------------------------------------------------------
 // MEDIA-запросы -------------------------------------------------------
 </style>

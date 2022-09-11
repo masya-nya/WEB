@@ -6,6 +6,7 @@ import { router } from './router/router'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import Paginate from "vuejs-paginate-next";
 
 library.add(fas)
 
@@ -13,4 +14,5 @@ createApp(App)
     .use(store)
     .use(router)
     .component('font-awesome-icon', FontAwesomeIcon)
+    .component('Paginate', Paginate)
     .mount('#app')

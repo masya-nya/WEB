@@ -26,7 +26,7 @@ export function useRequestFrom(fn) {
         yup
             .string()
             .required('Это обязательное поле')
-            .min(11, 'Минимальная величина ввода 11 символов')
+            .min(15, 'Введите корректный номер телефона')
     )
     const { 
         value: amountV, 

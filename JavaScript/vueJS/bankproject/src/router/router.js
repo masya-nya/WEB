@@ -13,6 +13,15 @@ export const router = createRouter({
                 auth: true
             }
         },
+        { 
+            path: '/request/:requestId?',
+            name: 'Requests',
+            component: () => import('../views/RequestPage.vue'),
+            meta: {
+                layout: 'main',
+                auth: true
+            }
+        },
         {
             path: '/help',
             name: 'Help',

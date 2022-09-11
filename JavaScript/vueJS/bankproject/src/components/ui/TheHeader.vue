@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="header__body">
-            <div class="header__title">
+            <div class="header__title" @click="$router.push('/')">
                 Банк<span class="YELLOW_WORD">ъ</span>
             </div>
             <ul class="header__navbar">
@@ -45,7 +45,7 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style>
 .YELLOW_WORD {
     color: rgb(252, 226, 36);
 }

@@ -1,8 +1,8 @@
 <template>
-    <div :class="['message', status]">
+    <li :class="['message', status]">
         <p>{{ text }}</p>
         <span class="CLOSE_SIDEBAR" @click="close(id)" >&#10006;</span>
-    </div>
+    </li>
 </template>
 <script>
 import { useStore } from 'vuex'

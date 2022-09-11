@@ -24,6 +24,10 @@ export default {
             })
             localStorage.setItem('messages', JSON.stringify(state.messages))
         },
+        clearSidebar(state) {
+            state.messages.splice(0, state.messages.length)
+            localStorage.removeItem('messages');
+        },
         deleteMessage(state, id) {
             state.messages.splice(state.messages.indexOf(state.messages.find((item) => item.id === id)), 1);
             localStorage.setItem('messages', JSON.stringify(state.messages))
