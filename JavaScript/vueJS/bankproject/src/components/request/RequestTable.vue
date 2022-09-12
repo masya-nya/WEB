@@ -23,9 +23,6 @@
                 </td>
                 <td>
                     <button class="btn primary" @click="$router.push(`/request/${r.id}`)">Открыть</button>
-                    <!-- <router-link v-slot="{navigate}" custom :to="{name: 'Request', params: {id: r.id}}">
-                        <button class="btn">Открыть</button>
-                    </router-link> -->
                 </td>
             </tr>
         </tbody>

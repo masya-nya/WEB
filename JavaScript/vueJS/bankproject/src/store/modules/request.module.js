@@ -51,19 +51,8 @@ export default {
                 state.requests = [];
             } else {
                 let request = Object.keys(requests).map(id => ({...requests[id], id})).reverse()
-                request = request.map(e => ({...e, num: request.indexOf(e)}))
-                state.requests = request;
-                state.fetchData = request;
+                this.commit('request/addNums', request)
             }
-        },
-        addRequest(state, request) {
-            state.fetchData.unshift(request);
-            state.requests = state.fetchData;
-        },
-        setupPagination(state) {
-            state.requests = _.chunk(state.requests, state.pageSize);
-            state.pageCount = state.requests.length;
-            state.pageRequests = state.requests[state.page - 1] || state.requests[0]
         },
         pageChangeHandler(state, page) {
             state.pageRequests = state.requests[page - 1] || state.requests[0]
@@ -91,9 +80,37 @@ export default {
                 })
             state.requests = arr;
             this.commit('request/setupPagination');
-        }
+        },
+        addNums(state, request) {
+            let arr = request.map(e => ({...e, num: request.indexOf(e)}))
+            state.requests = arr;
+            state.fetchData = arr;
+        },
+        setupPagination(state) {
+            state.requests = _.chunk(state.requests, state.pageSize);
+            state.pageCount = state.requests.length;
+            state.pageRequests = state.requests[state.page - 1] || state.requests[0]
+        },
     },
     actions: {
+        async create({state, getters, commit }, payload) {
+            try {
+                const token = store.getters['auth/token']
+                const { data } = await axios.post(`/requests.json?auth=${token}`, {...payload, id: getters.requests.length + 1})
+                state.fetchData.unshift({...payload, id: data.name });
+                commit('addNums', state.fetchData)
+                commit('setupPagination')
+                store.commit('messages/addMessage', {
+                    message: 'Заявка успешно создана.',
+                    status: 'primary'
+                })
+            } catch(e) {
+                store.commit('messages/addMessage', {
+                    message: e.message,
+                    status: 'danger'
+                })
+            }
+        },
         async load({ commit }) {
             try {
                 const token = store.getters['auth/token']
@@ -146,23 +163,6 @@ export default {
                 const token = store.getters['auth/token']
                 const { data } = await axios.get(`/requests/${id}.json?auth=${token}`)
                 return data
-            } catch(e) {
-                store.commit('messages/addMessage', {
-                    message: e.message,
-                    status: 'danger'
-                })
-            }
-        },
-        async create({ getters, commit }, payload) {
-            try {
-                const token = store.getters['auth/token']
-                const { data } = await axios.post(`/requests.json?auth=${token}`, {...payload, id: getters.requests.length + 1})
-                commit('addRequest', {...payload, id: data.name, num: getters.fetchData.length + 1})
-                commit('setupPagination')
-                store.commit('messages/addMessage', {
-                    message: 'Заявка успешно создана.',
-                    status: 'primary'
-                })
             } catch(e) {
                 store.commit('messages/addMessage', {
                     message: e.message,

@@ -451,6 +451,15 @@ small {
         }
     }
 }
+.SIDEBAR-enter-active,
+.SIDEBAR-leave-active {
+    transition: all 0.3s ease;
+}
+
+.SIDEBAR-enter-from,
+.SIDEBAR-leave-to {
+    transform: translateX(301px);
+}
 .message {
     display: flex;
     align-items: flex-start;
@@ -487,6 +496,15 @@ small {
     &:hover {
         transform: scale(1.05);
     }
+}
+.REQUEST-enter-active,
+.REQUEST-leave-active {
+    transition: all 1s ease;
+}
+
+.REQUEST-enter-from,
+.REQUEST-leave-to {
+    transform: translateX(30px);
 }
 .filter {
     display: grid;

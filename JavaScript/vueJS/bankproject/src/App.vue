@@ -1,6 +1,8 @@
 <template>
     <component :is="layout + '-layout'" v-if="layout" />
-    <app-messages-sidebar></app-messages-sidebar>
+    <transition name="SIDEBAR">
+        <app-messages-sidebar></app-messages-sidebar>
+    </transition>
 </template>
 
 <script>
